@@ -1,0 +1,6 @@
+config BR2_PACKAGE_COREFREQ
+	bool "CoreFreq"
+	help
+	  CoreFreq: x86_64 monitoring software
+
+	  https://github.com/cyring/CoreFreq

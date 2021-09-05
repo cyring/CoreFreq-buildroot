@@ -1,0 +1,1 @@
+source "$BR2_EXTERNAL_CyrIng_PATH/package/corefreq/Config.in"
