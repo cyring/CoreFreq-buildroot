@@ -45,9 +45,11 @@ declare -i CPU_COUNT=$(nproc) \
 * Run twice number of CPUs
 ```
 declare -i CPU_COUNT=$(( $(nproc) * 2 )) \
-&& qemu-system-x86_64 -smp ${CPU_COUNT} -m $(( ${CPU_COUNT} * 128 * 2 )) \
+&& qemu-system-x86_64 -smp ${CPU_COUNT} -m $(( ${CPU_COUNT} * 128 )) \
 -enable-kvm -cpu max,hv-runtime \
 -drive file=buildroot/output/images/disk.img,format=raw \
 -kernel buildroot/output/images/bzImage \
--append "nr_cpus=$(( ${CPU_COUNT} * 2 )) root=/dev/sda2 rootwait console=tty1 quiet"
+-append "nr_cpus=${CPU_COUNT} root=/dev/sda2 rootwait console=tty1 quiet"
 ```
+
+## [Example](https://github.com/cyring/CoreFreq-buildroot/issues/1)
